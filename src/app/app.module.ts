@@ -9,7 +9,6 @@ import {QuotesPage} from "../pages/quotes/quotes";
 import {QuotePage} from "../pages/quote/quote";
 import {SettingsPage} from "../pages/settings/settings";
 import {FavoritesQuotesService} from "../services/favoriteQuotes.service";
-import {UiUtils} from "../services/uiUtilis.service";
 
 @NgModule({
   declarations: [

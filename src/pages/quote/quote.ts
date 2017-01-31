@@ -14,8 +14,8 @@ export class QuotePage {
     this.quote = this.navParams.data;
   }
 
-  closeModal(){
-    this.viewCtrl.dismiss(); //can be invoked only when there is at-least one other page to display in the page stack.
+  leavePage(unfavorite:boolean){
+    this.viewCtrl.dismiss(unfavorite); //can be invoked only when there is at-least one other page to display in the page stack.
   }
 
 }
