@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FavoritesQuotesService} from "../../services/favoriteQuotes.service";
 import {IQuote} from "../../data/quote.interface";
-import {ModalController} from "ionic-angular";
+import {ModalController, MenuController} from "ionic-angular";
 import {QuotePage} from "../quote/quote";
+import {SettingsService} from "../../services/settingsService";
 
 /*
   Generated class for the Favorites page.
@@ -18,7 +19,10 @@ export class FavoritesPage  {
 
   quotes:IQuote[];
 
-  constructor(private favoritesQuotesService:FavoritesQuotesService, private modalCtrl:ModalController) {}
+  constructor(
+    private favoritesQuotesService:FavoritesQuotesService,
+    private modalCtrl:ModalController,
+  private settingsSrv:SettingsService) {}
 
   ionViewWillEnter(){
     this.quotes = this.favoritesQuotesService.getFavoritesQuotes();
@@ -44,4 +48,7 @@ export class FavoritesPage  {
     this.quotes = this.favoritesQuotesService.getFavoritesQuotes();
   }
 
+  getBackground():string{
+    return this.settingsSrv.isAltBackground ? 'altQuoteBackground' : 'light';
+  }
 }

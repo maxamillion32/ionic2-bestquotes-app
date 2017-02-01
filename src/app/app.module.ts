@@ -9,6 +9,7 @@ import {QuotesPage} from "../pages/quotes/quotes";
 import {QuotePage} from "../pages/quote/quote";
 import {SettingsPage} from "../pages/settings/settings";
 import {FavoritesQuotesService} from "../services/favoriteQuotes.service";
+import {SettingsService} from "../services/settingsService";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {FavoritesQuotesService} from "../services/favoriteQuotes.service";
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FavoritesQuotesService
+    FavoritesQuotesService,
+    SettingsService
   ]
 })
 export class AppModule {}
